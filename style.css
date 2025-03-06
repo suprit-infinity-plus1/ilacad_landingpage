@@ -551,12 +551,6 @@ h5,
   height: auto;
 }
 
-/* .location-box {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-} */
-
 .upcoming-batch-card-title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -634,9 +628,7 @@ img.manual_height {
 }
 
 .close {
-  /* text-align: right !important; */
   display: flex;
-  /* position: absolute; */
   justify-content: end;
   margin: 0px 10px 0px 0px;
 }
@@ -791,7 +783,6 @@ img.manual_height {
 
 .hide-btn {
   display: none;
-  /* Hide Hide button initially */
 }
 
 
@@ -815,8 +806,6 @@ img.manual_height {
   width: 850px;
   bottom: 10%;
   left: 50%;
-  background-color: rgba(0, 0, 0, 0.521);
-  border-radius: 10px;
   transform: translateX(-50%);
   transition: all 1s ease-in;
   transition-delay: 1.5s;
@@ -828,9 +817,7 @@ img.manual_height {
   padding: 20px;
   width: 850px;
   top: 50%;
-  left: 10%;
-  background-color: rgba(0, 0, 0, 0.521);
-  border-radius: 10px;
+  left: 3%;
   transform: translateY(-50%);
   transition: all 1s ease-in;
   transition-delay: 1.5s;
@@ -914,4 +901,24 @@ img.manual_height {
   .first-banner-text-container p {
     display: none;
   }
+}
+
+@media (max-width: 480px) {
+  .font-align {
+    text-align: center !important;
+  }
+}
+
+.batch-card {
+  border: 8px solid white;
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.upcoming-batch-card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
