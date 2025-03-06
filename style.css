@@ -798,6 +798,7 @@ img.manual_height {
   background-color: rgba(0, 0, 0, 0.397);
   opacity: 0;
   transition: all 1s ease-in;
+  transition-delay: 2s;
   z-index: 1;
 }
 
@@ -820,7 +821,7 @@ img.manual_height {
   left: 3%;
   transform: translateY(-50%);
   transition: all 1s ease-in;
-  transition-delay: 1.5s;
+  transition-delay: 3s;
   opacity: 0;
   z-index: 2;
 }
