@@ -30,7 +30,7 @@ function horizontalLoop(items, config) {
         widths = [],
         xPercents = [],
         curIndex = 0,
-        pixelsPerSecond = (config.speed || 1) * 100,
+        pixelsPerSecond = (config.speed || 1) * 50,
         snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1),
         totalWidth,
         curX,
