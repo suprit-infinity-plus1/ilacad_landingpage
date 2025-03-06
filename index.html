@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ilacad</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="/animate.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+
+  <body class="position-relative">
+    <!-- Header section -->
+    <header class="header bg-light py-3" id="home">
+      <div class="container">
+        <div class="row">
+          <!-- Social Media Icons -->
+          <!-- <div class="col-md-4 md-mb">
+          <ul class="list-unstyled d-flex gap-3 mb-0 md-center">
+            <li>
+              <a href="https://www.facebook.com/share/1X4mFvawbN/?mibextid=qi2Omg" target="_blank" class="social-link">
+                <i class="fa fa-facebook-official "></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ilacadinstitute?igsh=YXFmcjR4ZHNlNm5w" target="_blank"
+                class="social-link">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://youtube.com/@ilacadinstitute6211?si=oTFrJkdvEco53V-f" target="_blank"
+                class="social-link">
+                <i class="fa fa-youtube-play"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/9076016020" target="_blank" class="social-link">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/ilacad/" target="_blank" class="social-link">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+
+          </ul>
+        </div> -->
+
+          <!-- Contact Info -->
+          <div
+            class="col-12 d-flex flex-wrap justify-content-md-end justify-content-center contact-info md-fs"
+          >
+            <span class="email-info">
+              <i class="fa fa-envelope md-fs"></i>
+              <a class="text-decoration-none text-dark">info@ilacad.org</a>
+            </span>
+            <span class="ms-3 phone-info">
+              <i class="fa fa-phone md-fs"></i>
+              <a href="tel:+918097711115" class="text-decoration-none text-dark"
+                >+91-80977 11115</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar Start here -->
+    <nav class="navbar navbar-dark navbar-expand-lg position-sticky top-0">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#home">
+          <img
+            src="images/LOGO/ILACAD (WS).png"
+            alt="ILACAD Logo"
+            height="51"
+          />
+        </a>
+
+        <!-- Toggler for mobile view -->
+        <button
+          class="navbar-toggler ms-auto border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-center text-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav me-auto mx-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT ILACAD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#programs">PROGRAMS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">TESTIMONIALS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">GALLERY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT US</a>
+            </li>
+          </ul>
+          <button
+            class="btn btn-enrol md-btn outline-0"
+            style="box-shadow: none !important"
+            data-bs-toggle="modal"
+            data-bs-target="#courseEnquiryModalCenter"
+          >
+            ENROLL NOW
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        let navCollapse = document.querySelector(".navbar-collapse");
+
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (window.innerWidth <= 991) {
+              let bsCollapse = new bootstrap.Collapse(navCollapse, {
+                toggle: false,
+              });
+              bsCollapse.hide();
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Carousel start here -->
+    <!-- <div
+      id="carouselExampleCaptions"
+      class="carousel slide carousel-fade d-none d-lg-block d-md-block"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="images/Banners/Banner 1 without text.jpg"
+            class="d-block w-100"
+            alt=""
+          />
+          <div
+            class="carousel-caption custom-caption"
+            class="wow bounceIn"
+            data-wow-duration="2s"
+            data-wow-delay="5s"
+          >
+            <h2 class="mb-4 display-4 fs-mannaul">
+              Join India's Leading Clinical Cosmetology & Aesthetic Medicine
+              Academy
+            </h2>
+            <p class="mb-1">15+ Branches Across India</p>
+            <p class="mb-1">Cambridge International School Certification</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/Banners/Banner 1 without text.jpg"
+            class="d-block w-100"
+            alt=""
+          />
+          <div
+            class="carousel-caption custom-caption"
+            class="wow bounceIn"
+            data-wow-duration="2s"
+            data-wow-delay="5s"
+          >
+            <h2 class="mb-4 display-4 fs-mannaul">
+              Become An Internationally Certified Aesthetic Medicine Expert
+            </h2>
+            <p class="mb-1">Hands-on Training on Real Patients</p>
+            <p class="mb-1">100% Career Growth Assistance</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> -->
+
+    <!-- mobile carousel -->
+    <!-- <div
+      id="carouselExampleCaptions"
+      class="carousel slide carousel-fade d-sm-block d-lg-none d-md-none"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="images/PHN Banner 1 without text.jpg"
+            class="d-block w-100 img-fluid"
+            alt=""
+          />
+          <div
+            class="carousel-caption custom-caption"
+            class="wow bounceIn"
+            data-wow-duration="2s"
+            data-wow-delay="5s"
+          >
+            <h2 class="mb-4 display-4 fs-mannaul">
+              Join India's Leading Clinical Cosmetology & Aesthetic Medicine
+              Academy
+            </h2>
+            <p class="mb-1">15+ Branches Across India</p>
+            <p class="mb-1">Cambridge International School Certification</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/PHN Banner 1 without text.jpg"
+            class="d-block w-100 img-fluid"
+            alt=""
+          />
+          <div
+            class="carousel-caption custom-caption"
+            class="wow bounceIn"
+            data-wow-duration="2s"
+            data-wow-delay="5s"
+          >
+            <h2 class="mb-4 display-4 fs-mannaul">
+              Become An Internationally Certified Aesthetic Medicine Expert
+            </h2>
+            <p class="mb-1">Hands-on Training on Real Patients</p>
+            <p class="mb-1">100% Career Growth Assistance</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon d-none d-lg-block"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon d-none d-lg-block"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> -->
+
+    <!-- <style>
+      @media (max-width: 767px) {
+        .custom-caption {
+          max-width: 60%;
+          left: 5%;
+          padding: 10px;
+        }
+
+        .carousel-inner img {
+          height: 350px;
+          object-fit: cover;
+        }
+
+        .carousel-caption h2 {
+          font-size: 1.5rem;
+        }
+
+        .carousel-caption p {
+          font-size: 1rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .custom-caption {
+          max-width: 60%;
+          left: 0%;
+          padding: 10px;
+        }
+
+        .carousel-inner img {
+          height: 310px;
+          object-fit: cover;
+        }
+
+        .carousel-caption h2 {
+          font-size: 1.3rem;
+        }
+
+        .carousel-caption p {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 350px) {
+        .custom-caption {
+          max-width: 70%;
+          left: 0%;
+          padding: 10px;
+        }
+
+        .carousel-caption h2 {
+          font-size: 1.2rem;
+        }
+      }
+    </style> -->
+
+    <!-- hero section start -->
+    <div class="hero owl-carousel owl-theme" id="hero-carousel">
+      <div class="banner position-relative">
+        <img
+          class="img-fluid w-100 desktop-banner"
+          src="./images/Banners/First Banner.jpg"
+          alt=""
+        />
+        <img
+          class="img-fluid w-100 mobile-banner"
+          src="./images/Banners/First_Banner_mobile.jpg"
+          alt=""
+        />
+        <div class="black-overlay position-absolute"></div>
+        <div
+          class="first-banner-text-container position-absolute text-light text-center"
+        >
+          <h1>
+            WELCOME TO MOST PREMIER INSTITUTE OF FACIAL AESTHETIC & CLINICAL
+            COSMETOLOGY
+          </h1>
+          <p>UK Cambridge International Certification</p>
+        </div>
+      </div>
+      <div class="banner position-relative">
+        <img
+          class="img-fluid w-100 desktop-banner"
+          src="./images/Banners/Second Banner.jpg"
+          alt=""
+        />
+        <img
+          class="img-fluid w-100 mobile-banner"
+          src="./images/Banners/Second Banner_mobile.jpg"
+          alt=""
+        />
+        <div class="black-overlay position-absolute"></div>
+        <div class="banner-text-container position-absolute text-light">
+          <h1>
+            TRANSFORM YOUR CAREER WITH WORLD-CLASS AESTHETIC MEDICINE EDUCATION!
+          </h1>
+          <p>Hands-on Training With Real Patients</p>
+        </div>
+      </div>
+    </div>
+    <!-- hero section end -->
+
+    <div class="d-md-none pt-5 pb-5">
+      <div class="container">
+        <h4 class="fw-bold text-center text-lg-start mb-3">Enquire Now</h4>
+        <form action="email.php" method="POST">
+          <div class="mb-2">
+            <label for="enquire-name" class="form-label mb-0">Name</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="enquire-name"
+              required
+              placeholder="Enter name"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="enquire-phone" class="form-label mb-0"
+              >Phone Number</label
+            >
+            <input
+              type="tel"
+              name="phone"
+              class="form-control"
+              id="enquire-phone"
+              required
+              placeholder="Enter number"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="enquire-email" class="form-label mb-0">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="enquire-email"
+              required
+              placeholder="name@gmail.com"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="enquire-city" class="form-label mb-0">City</label>
+            <input
+              type="text"
+              name="city"
+              class="form-control"
+              id="enquire-city"
+              required
+              placeholder="Enter City"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="enquire-message" class="form-label mb-0">Message</label>
+            <textarea
+              class="form-control"
+              name="message"
+              id="enquire-message"
+              rows="2"
+              placeholder="Enter Message..."
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn submit-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- About Page -->
+    <section class="margin-topBottom mt-5" id="about">
+      <div
+        class="container-fluid purpule-background text-center py-2 text-light"
+      >
+        <h1 class="text-uppercase">
+          WHERE INNOVATION MEETS AESTHETIC EXPERTISE
+        </h1>
+      </div>
+      <div class="container">
+        <p class="text-center mt-4 mb-5">
+          ILACAD is a globally recognized institute specializing in Facial
+          Aesthetic & Clinical Cosmetology Education. With expert-led training,
+          hands-on experience, and UK affiliated international certification, we
+          shape future aesthetic leaders.
+        </p>
+      </div>
+      <div class="container">
+        <div class="row align-items-center flex-lg-row">
+          <!-- Left Side Images (Carousel) -->
+          <div class="col-lg-7">
+            <div class="owl-carousel owl-theme" id="about-us-carousel">
+              <img src="images/About Ilacad/AHMEDABAD.jpg" alt="" />
+              <img src="images/About Ilacad/BANGALORE (1).jpg" alt="" />
+              <img src="images/About Ilacad/CHANDIGARH.jpg" alt="" />
+              <img src="images/About Ilacad/CHENNAI.jpg" alt="" />
+              <img src="images/About Ilacad/DELHI.jpg" alt="" />
+              <img src="images/About Ilacad/HYDERABAD.jpg" alt="" />
+              <img src="images/About Ilacad/JAIPUR.jpg" alt="" />
+              <img src="images/About Ilacad/KASHMIR.jpg" alt="" />
+              <img src="images/About Ilacad/KOCHI.jpg" alt="" />
+              <img src="images/About Ilacad/KOLKATA.jpg" alt="" />
+              <img src="images/About Ilacad/LUCKNOW.jpg" alt="" />
+              <img src="images/About Ilacad/MUMBAI.jpg" alt="" />
+              <img src="images/About Ilacad/PUNE (1).jpg" alt="" />
+            </div>
+            <div class="mx-auto text-center d-none d-lg-block">
+              <span class="cta-button purpule-background dark-shadow-bottom"
+                >Start Your Journey with ILACAD
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Side Text -->
+          <div class="col-lg-5">
+            <div class="text-lg-start" style="margin-top: -48px">
+              <ul class="mx-auto">
+                <li class="fw-bold py-2 purpule-text">
+                  10+ Years of Leading Aesthetic Education
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  25+ Specialized Courses Online & Offline
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  Comprehensive Course Curriculums
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  Personalized Mentorship & Career Guidance
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  Latest Techniques & Cutting-Edge Technology
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  Clinical Hands-On Training with Real Patients
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  Internationally UK Board Affiliated Certification
+                </li>
+                <li class="fw-bold py-2 purpule-text">
+                  Join a Network of Successful Aesthetic Doctors
+                </li>
+              </ul>
+              <div class="mx-auto text-center d-block d-lg-none">
+                <span class="cta-button purpule-background dark-shadow-bottom"
+                  >Start Your Journey with ILACAD
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      @media (max-width: 480px) {
+        .font-align {
+          text-align: center !important;
+        }
+      }
+    </style>
+
+    <!-- featured Section start here -->
+    <div class="container-fluid mb-3 feature-section">
+      <div class="container">
+        <div class="text-center">
+          <h1 style="color: #480740; font-weight: 700" class="mb-4">
+            AFFILIATIONS & ACCREDITATIONS
+          </h1>
+        </div>
+      </div>
+      <!-- <div class="partners-block ">
+      <div class="partners-slider">
+        <div class="partners-track">
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/01.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/02.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/03.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/04.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/05.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/06 (2).jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/07.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/08.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/09.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/10.jpg"
+              alt=""></a>
+          <a href="#" class="partners-item"><img class="partners-logo" src="images/AFFILIATIONS Images/11.jpg"
+              alt=""></a>
+        </div>
+      </div>
+    </div> -->
+      <!-- ======= new code ======= -->
+      <div class="partners-block">
+        <div class="partners_line_single">
+          <a href="#" class="partners-item"> </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/01.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/02.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/03.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/04.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/05.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/06 (2).jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/07.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/08.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/09.jpg"
+                alt=""
+            /></span>
+          </a>
+          <a href="#" class="partners-item">
+            <span
+              ><img
+                class="partners-logo"
+                src="images/AFFILIATIONS Images/10.jpg"
+                alt=""
+            /></span>
+          </a>
+        </div>
+      </div>
+      <!-- ======= new code ======= -->
+    </div>
+
+    <!-- Upcoming Batches Section Start -->
+    <section
+      class="upcoming-batches upcoming-section margin-topBottom"
+      id="programs"
+    >
+      <div class="container-fluid">
+        <div class="text-center mb-4">
+          <h1 style="color: #480740; font-weight: 700">UPCOMING PROGRAMS</h1>
+        </div>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-3">
+            <!-- Batch Card 1 -->
+            <div class="col">
+              <div class="batch-card shadow rounded">
+                <div class="position-relative">
+                  <img
+                    src="images/Upcoming Programs/new.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 1"
+                  />
+                  <div class="batch-card-icon-box position-absolute">
+                    <img src="./images/Upcoming/01.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="content p-4 bg-white rounded">
+                  <p class="card-text h5 fw-bold">PG Diploma & Fellowship In</p>
+                  <h4
+                    class="card-title text-uppercase fw-bolder purpule-text"
+                    style="min-height: 58px"
+                  >
+                    Facial Aesthetics & Clinical Cosmetology
+                  </h4>
+                  <div class="container px-2">
+                    <div class="row d-flex justify-content-between">
+                      <div
+                        class="col-5 pink-background h5 text-light text-uppercase p-2 mb-0 rounded text-center"
+                      >
+                        pgdfc & FFAC
+                      </div>
+                      <div
+                        class="col-5 purpule-background h5 text-light text-uppercase p-2 mb-0 rounded text-center btn-enroll"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <button class="btn btn-lg btn-enroll w-100 btn-hover"
+                  style="box-shadow: none !important; border: 2px solid #480740" data-bs-toggle="modal"
+                  data-bs-target="#courseEnquiryModalCenter">Enroll Now</button> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Batch Card 2 -->
+            <div class="col">
+              <div class="batch-card shadow rounded">
+                <div class="position-relative">
+                  <img
+                    src="images/Upcoming Programs/FFAC.JPG"
+                    class="img-fluid w-100"
+                    alt="Batch 2"
+                  />
+                  <div class="batch-card-icon-box position-absolute">
+                    <img src="./images/Upcoming/01.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="content p-4 bg-white rounded">
+                  <p class="card-text h5 fw-bold">MASTER COURSE IN</p>
+                  <h4
+                    class="card-title text-uppercase fw-bolder purpule-text"
+                    style="min-height: 58px"
+                  >
+                    INJECTABLES (BTTX,FILLERS & THREADS)
+                  </h4>
+
+                  <div class="container px-2">
+                    <div class="row d-flex justify-content-between">
+                      <div
+                        class="col-5 pink-background h5 text-light text-uppercase p-2 mb-0 rounded text-center"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                      <div
+                        class="col-5 purpule-background h5 text-light text-uppercase p-2 mb-0 rounded text-center btn-enroll"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Batch Card 3 -->
+            <div class="col">
+              <div class="batch-card shadow rounded">
+                <div class="position-relative">
+                  <img
+                    src="images/Upcoming Programs/IFFAC.JPG"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                  <div class="batch-card-icon-box position-absolute">
+                    <img src="./images/Upcoming/01.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="content p-4 bg-white rounded">
+                  <p class="card-text h5 fw-bold">INTERNATIONAL FELLOWSHIP</p>
+                  <h4
+                    class="card-title text-uppercase fw-bolder purpule-text"
+                    style="min-height: 58px"
+                  >
+                    FACIAL AESTHETICS AND CLINICAL COSMETOLOGY
+                  </h4>
+
+                  <div class="container px-2">
+                    <div class="row d-flex justify-content-between">
+                      <div
+                        class="col-5 pink-background h5 text-light text-uppercase p-2 mb-0 rounded text-center"
+                      >
+                        IFFAC
+                      </div>
+                      <div
+                        class="col-5 purpule-background h5 text-light text-uppercase p-2 mb-0 rounded text-center btn-enroll"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Batch Card 4 -->
+            <div class="col">
+              <div class="batch-card shadow rounded">
+                <div class="position-relative">
+                  <img
+                    src="images/Upcoming Programs/MCHT.JPG"
+                    class="img-fluid w-100"
+                    alt="Batch 1"
+                  />
+                  <div class="batch-card-icon-box position-absolute">
+                    <img src="./images/Upcoming/01.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="content p-4 bg-white rounded">
+                  <p class="card-text h5 fw-bold">MASTER COURSE IN</p>
+                  <h4
+                    class="card-title text-uppercase fw-bolder purpule-text"
+                    style="min-height: 58px"
+                  >
+                    HAIR TRANSPLANTATION
+                  </h4>
+
+                  <div class="container px-2">
+                    <div class="row d-flex justify-content-between">
+                      <div
+                        class="col-5 pink-background h5 text-light text-uppercase p-2 mb-0 rounded text-center"
+                      >
+                        MCHT
+                      </div>
+                      <div
+                        class="col-5 purpule-background h5 text-light text-uppercase p-2 mb-0 rounded text-center btn-enroll"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Batch Card 5 -->
+            <div class="col">
+              <div class="batch-card shadow rounded">
+                <div class="position-relative">
+                  <img
+                    src="images/Upcoming Programs/FSC.JPG"
+                    class="img-fluid w-100"
+                    alt="Batch 2"
+                  />
+                  <div class="batch-card-icon-box position-absolute">
+                    <img src="./images/Upcoming/01.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="content p-4 bg-white rounded">
+                  <p class="card-text h5 fw-bold">DIPLOMA & FELLOWSHIP IN</p>
+                  <h4
+                    class="card-title text-uppercase fw-bolder purpule-text"
+                    style="min-height: 58px"
+                  >
+                    SKIN AESTHETIC & COSMETOLOGY
+                  </h4>
+
+                  <div class="container px-2">
+                    <div class="row d-flex justify-content-between">
+                      <div
+                        class="col-5 pink-background h5 text-light text-uppercase p-2 mb-0 rounded text-center"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                      <div
+                        class="col-5 purpule-background h5 text-light text-uppercase p-2 mb-0 rounded text-center btn-enroll"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Batch Card 6 -->
+            <div class="col">
+              <div class="batch-card shadow rounded">
+                <div class="position-relative">
+                  <img
+                    src="images/Upcoming Programs/new1.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                  <div class="batch-card-icon-box position-absolute">
+                    <img src="./images/Upcoming/01.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="content p-4 bg-white rounded">
+                  <p class="card-text h5 fw-bold">DIPLOMA IN</p>
+                  <h4
+                    class="card-title text-uppercase fw-bolder purpule-text"
+                    style="min-height: 58px"
+                  >
+                    SEMI PERMANENT MAKEUP
+                  </h4>
+
+                  <div class="container px-2">
+                    <div class="row d-flex justify-content-between">
+                      <div
+                        class="col-5 pink-background h5 text-light text-uppercase p-2 mb-0 rounded text-center"
+                      >
+                        SMPU
+                      </div>
+                      <div
+                        class="col-5 purpule-background h5 text-light text-uppercase p-2 mb-0 rounded text-center btn-enroll"
+                        data-bs-toggle="modal"
+                        data-bs-target="#courseEnquiryModalCenter"
+                      >
+                        Enquire Now
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col">
+            <div class="batch-card shadow rounded">
+              <div class="position-relative">
+                <img src="images/Upcoming Programs/FCD.JPG" class="img-fluid w-100" alt="Batch 1">
+                <div class="batch-card-icon-box position-absolute">
+                  <img src="./images/Upcoming/01.jpg" alt="">
+                </div>
+                
+              </div>
+              <div class="content p-4 bg-white rounded">
+                <h4 class="card-title" style="color: #480740; font-weight: 600;">Fellowship In</h4>
+                <p class="card-text text-dark h5 mb-3">Cosmetic Dentistry </p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="batch-card shadow rounded">
+              <div class="position-relative">
+                <img src="images/Upcoming Programs/DSC.JPG" class="img-fluid w-100" alt="Batch 2">
+                
+              </div>
+              <div class="content p-4 bg-white rounded">
+                <h4 class="card-title" style="color: #480740; font-weight: 600;">Diploma In</h4>
+                <p class="card-text text-dark h5 mb-3">Skin Aesthetics & Cosmetology</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="batch-card shadow rounded">
+              <div class="position-relative">
+                <img src="images/Upcoming Programs/FSC.JPG" class="img-fluid w-100" alt="Batch 3">
+                
+              </div>
+              <div class="content p-4 bg-white rounded">
+                <h4 class="card-title" style="color: #480740; font-weight: 600;">Fellowship In</h4>
+                <p class="card-text text-dark h5 mb-3">Skin Aesthetics & Cosmetology</p>
+                
+              </div>
+            </div>
+          </div> -->
+          </div>
+        </div>
+        <style>
+          .batch-card {
+            border: 8px solid white;
+            border-radius: 20px !important;
+            overflow: hidden;
+          }
+
+          /* .location-box span {
+          color: #480740;
+          background-color: white;
+          font-size: 18px;
+          font-weight: 500;
+          padding: 10px;
+          border-radius: 10px;
+        } */
+        </style>
+      </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="statistics-section mt-3">
+      <div class="container-fluid">
+        <div class="pt-5">
+          <div class="text-center mb-5">
+            <h1 class="text-light mb-3">ILACAD’S LEGACY OF EXCELLENCE</h1>
+            <p
+              class="text-light mb-5 col-12 col-md-6 mx-auto custom_font"
+              style="max-width: 560px"
+            >
+              Explore our legacy of excellence and achievements in aesthetic
+              medicine and education.
+            </p>
+          </div>
+          <div
+            class="container-fluid d-flex justify-content-center flex-wrap pt-4"
+            style="gap: 50px"
+          >
+            <div class="text-center p-3 counter-card wow fadeInUp">
+              <div
+                class="border bg-primary p-4 rounded shadow-sm bg-light"
+                class="wow bounceIn"
+                data-wow-duration="2s"
+              >
+                <div class="position-relative">
+                  <div class="position-absolute">
+                    <img
+                      src="images/Highlights/Years of Experience.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h2
+                  class="counter display-4 mt-5"
+                  data-count="10"
+                  style="color: #480740"
+                >
+                  0
+                </h2>
+                <p
+                  class="h5"
+                  style="
+                    font-size: 20px;
+                    font-size: 20px !important;
+                    color: #480740;
+                  "
+                >
+                  Years of Training <br />
+                  Experience
+                </p>
+              </div>
+            </div>
+            <div class="text-center p-3 counter-card wow fadeInUp">
+              <div class="border bg-primary p-4 rounded shadow-sm bg-light">
+                <div class="position-relative">
+                  <div class="position-absolute">
+                    <img src="images/Highlights/Centers Globally.jpg" alt="" />
+                  </div>
+                </div>
+                <h2
+                  class="counter display-4 mt-5"
+                  data-count="30"
+                  style="color: #480740"
+                >
+                  0
+                </h2>
+                <p
+                  class="h5"
+                  style="
+                    font-size: 20px;
+                    font-size: 20px !important;
+                    color: #480740;
+                  "
+                >
+                  ILACAD Centers <br />Globally
+                </p>
+              </div>
+            </div>
+            <div class="text-center p-3 counter-card wow fadeInUp">
+              <div class="border bg-primary p-4 rounded shadow-sm bg-light">
+                <div class="position-relative">
+                  <div class="position-absolute">
+                    <img
+                      src="images/Highlights/Practical Learning.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h2
+                  class="counter display-4 mt-5"
+                  data-count="10000"
+                  style="color: #480740"
+                >
+                  0
+                </h2>
+
+                <p
+                  class="h5"
+                  style="
+                    font-size: 20px;
+                    font-size: 20px !important;
+                    color: #480740;
+                  "
+                >
+                  Doctors Trained <br />
+                  World-wide
+                </p>
+              </div>
+            </div>
+            <div class="text-center p-3 counter-card wow fadeInUp">
+              <div class="border bg-primary p-4 rounded shadow-sm bg-light">
+                <div class="position-relative">
+                  <div class="position-absolute">
+                    <img src="images/Highlights/Certified Doctors.jpg" alt="" />
+                  </div>
+                </div>
+                <h2
+                  class="counter display-4 mt-5"
+                  data-count="30"
+                  style="color: #480740"
+                >
+                  0
+                </h2>
+                <p
+                  class="h5"
+                  style="
+                    font-size: 20px;
+                    font-size: 20px !important;
+                    color: #480740;
+                  "
+                >
+                  Expert & Renowned <br />
+                  Faculties
+                </p>
+              </div>
+            </div>
+            <!-- <div class="text-center p-3 counter-card wow fadeInUp">
+            <div class="border bg-primary p-4 rounded shadow-sm bg-light">
+              <div class="position-relative">
+                <div class="position-absolute">
+                  <img src="images/Highlights/Specialized Courses.jpg" alt="">
+                </div>
+              </div>
+              <h2 class="counter display-4 mt-5" data-count="30" style="color: #480740;">0</h2>
+              <p class="h5" style="font-size: 20px;font-size: 20px !important;color: #480740;">Specialized <br>
+                Courses</p>
+            </div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- map -->
+    <div class="container-fluid pt-5">
+      <div class="row">
+        <div class="col-md-5 col-lg-6">
+          <img
+            src="images/Map/map2.png"
+            class="img-fluid w-100 px-5"
+            alt="India Image"
+          />
+        </div>
+        <div class="col-md-7 col-lg-6">
+          <div class="location-container">
+            <h1 style="color: #480740; font-weight: 700">
+              PRESENCE ACROSS INDIA & GLOBALLY
+            </h1>
+            <div class="mb-3">
+              <p
+                class="position-relative wow fadeInUp"
+                style="text-align: left"
+              >
+                Train at 15+ Centers! Hands-on learning, live demos, and
+                globally recognized certification
+              </p>
+            </div>
+            <div class="row">
+              <div
+                class="d-flex flex-wrap justify-content-between text-start pe-5 ps-0"
+              >
+                <ul>
+                  <li>Mumbai</li>
+                  <li>Chennai</li>
+                  <li>Bangalore</li>
+                  <li>USA</li>
+                  <li class="hidden-city" style="display: none">Bhopal</li>
+                  <li class="hidden-city" style="display: none">Jaipur</li>
+                  <li class="hidden-city" style="display: none">Kashmir</li>
+                </ul>
+                <ul>
+                  <li>Chandigarh</li>
+                  <li>Ahmedabad</li>
+                  <li>Hyderabad</li>
+                  <li>Mauritius</li>
+                  <li class="hidden-city" style="display: none">Kolkata</li>
+                  <li class="hidden-city" style="display: none">Abu Dhabi</li>
+                  <li class="hidden-city" style="display: none">Nepal</li>
+                </ul>
+                <ul>
+                  <li>Delhi</li>
+                  <li>Pune</li>
+                  <li>Kochi</li>
+                  <li>Dubai</li>
+                  <li class="hidden-city" style="display: none">Lucknow</li>
+                  <li class="hidden-city" style="display: none">Colombo</li>
+                  <li class="hidden-city" style="display: none">Kenya</li>
+                </ul>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="cta-button purpule-background text-start"
+              id="hidden-city-toggle"
+            >
+              Know more
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section
+      class="upcoming-batches gallery-section margin-topBottom pb-5"
+      id="gallery"
+    >
+      <div class="container-fluid">
+        <div class="text-center mb-5">
+          <h1 style="color: #480740; font-weight: 700">
+            EXTENSIVE HANDS-ON TRAINING
+          </h1>
+        </div>
+        <div class="row">
+          <div
+            class="col-12 owl-carousel upcoming-batches-carousel owl-theme"
+            id="upcoming-batches-carouse4"
+          >
+            <!-- Gallery Batch Card 1 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/14.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- gallery Batch Card 2 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/13.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 3 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/01 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 4 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/02 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 5 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/03 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 6 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/04 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 7 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/05 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 8 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/06 (4).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 9 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/07 (3).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 10 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/08 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 11 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/09 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 12 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/10 (2).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 13 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/11 (1).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 14 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/12.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 14 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/15.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 14 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/16.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 14 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/17.jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Batch Card 14 -->
+            <div class="mb-4 px-md-3 px-0">
+              <div class="batch-card position-relative rounded overflow-hidden">
+                <!-- Image and Country Tag -->
+                <div class="position-relative">
+                  <img
+                    src="images/Gallery/new/18 (1).jpg"
+                    class="img-fluid w-100"
+                    alt="Batch 3"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* .location-box {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    } */
+
+      .upcoming-batch-card-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+
+    <!-- Enquire Now Modal Start -->
+    <div
+      class="modal fade margin-topBottom"
+      id="courseEnquiryModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="courseEnquiryModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close position-absolute border-0 icon-style"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            style="right: 0px"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="d-block text-center pt-3">
+            <img
+              src="https://signup.ilacad.org.in/wp-content/uploads/2024/03/ILACAD-PS.png"
+              alt=""
+              class="manual_height"
+            />
+          </div>
+          <div
+            class="modal-header d-flex justify-content-center align-items-center"
+          >
+            <h5
+              class="modal-title text-center fw-bold"
+              id="exampleModalCenterTitle"
+              style="font-size: 24px !important"
+            >
+              <b>Course Enquiry Form</b>
+            </h5>
+          </div>
+          <div class="modal-body pb-0">
+            <form action="email.php" method="post">
+              <div class="form-group">
+                <label
+                  for="enquire-input-name"
+                  style="font-size: 18px; font-weight: 500"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control mb-2 rounded-0"
+                  id="enquire-input-name"
+                  required
+                  placeholder="Enter name"
+                  style="
+                    border-style: none;
+                    border-bottom: 2px solid black;
+                    outline-style: none !important;
+                    box-shadow: none !important;
+                  "
+                />
+              </div>
+              <div class="form-group">
+                <label
+                  for="enquire-input-phone"
+                  style="font-size: 18px; font-weight: 500"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-control mb-2 rounded-0"
+                  id="enquire-input-phone"
+                  required
+                  placeholder="Enter number"
+                  style="
+                    border-style: none;
+                    border-bottom: 2px solid black;
+                    outline-style: none;
+                    box-shadow: none !important;
+                  "
+                />
+              </div>
+              <div class="form-group">
+                <label
+                  for="enquire-input-email"
+                  style="font-size: 18px; font-weight: 500"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control mb-2 rounded-0"
+                  id="enquire-input-email"
+                  required
+                  style="
+                    border-style: none;
+                    border-bottom: 2px solid black;
+                    outline-style: none;
+                    box-shadow: none !important;
+                  "
+                  placeholder="name@gmail.com"
+                />
+              </div>
+              <div class="form-group">
+                <label
+                  for="enquire-input-address"
+                  style="font-size: 18px; font-weight: 500"
+                  >City</label
+                >
+                <input
+                  type="text"
+                  name="city"
+                  class="form-control mb-2 rounded-0"
+                  id="enquire-input-name"
+                  required
+                  placeholder="Enter City"
+                  style="
+                    border-style: none;
+                    border-bottom: 2px solid black;
+                    outline-style: none;
+                    box-shadow: none !important;
+                  "
+                />
+              </div>
+              <div class="form-group">
+                <label
+                  for="enquire-input-message"
+                  style="font-size: 18px; font-weight: 500"
+                  >Message</label
+                >
+                <textarea
+                  class="form-control mb-2 rounded-0"
+                  name="message"
+                  id="enquire-input-message"
+                  rows="1"
+                  placeholder="Enter Message..."
+                  style="
+                    border-style: none;
+                    border-bottom: 2px solid black;
+                    outline-style: none;
+                    box-shadow: none !important;
+                  "
+                ></textarea>
+              </div>
+              <div class="modal-footer justify-content-center p-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="
+                    width: 240px;
+                    height: 50px;
+                    font-size: 21px;
+                    font-weight: 500;
+                    background-color: #480740;
+                    box-shadow: none !important;
+                  "
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlight Section -->
+    <section class="video-section pt-5 pb-5">
+      <div class="container-fluid">
+        <div class="text-center mb-5">
+          <h1 class="text-light mb-3">HAPPY DOCTORS</h1>
+        </div>
+        <div class="container">
+          <div class="row d-flex flex-wrap">
+            <div class="col-md-4 mb-4">
+              <div style="padding: 100% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1061533699?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                  title="ILACAD Testimonial_ Dr Hanan Aboziad - Dermatologist from Jordan"
+                ></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div style="padding: 100% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1061534286?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                  title="Dr Tasleem Mandarry, MS - General Surgeon in Mauritius"
+                ></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div style="padding: 100% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1061535574?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                  title="Dr. Ubaid Ur Rahman (an Oculoplastic Surgeon) - Delhi Batch _ ILACAD"
+                ></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div style="padding: 177.78% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1061534602?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                  title="Dr. Manish S MCH Plastic Surgeon"
+                ></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div style="padding: 177.78% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1061535059?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                  title="Dr. Asmita MS, Oculoplasty Surgeon"
+                ></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div style="padding: 177.78% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1061536224?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                  title="Dr. Srishti Sharma Dental Surgeon"
+                ></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- youtube video section or testomonial section -->
+    <!-- <div class="youtube-video-section margin-topBottom " id="testimonials">
+    <div class="text-center mb-5">
+      <h1 style="color: #480740; font-weight: 700; margin: 0px 30px">VOICES THAT VALIDATES OUR EXCELLENCE</h1>
+    </div>
+    <div class="container mt-5 mb-3">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <iframe class="card-img-top" src="https://www.youtube.com/embed/TJten8KjdzA?si=CyIqByaeycLp_eiO"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <iframe class="card-img-top" src="https://www.youtube.com/embed/NbZp6jHY-3I?si=wY6z9N0XXD0SuJEj"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <iframe class="card-img-top" src="https://www.youtube.com/embed/Rbd2XS_nBmw?si=hVDd1sur2vdb3myp"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+    <!-- Review Section -->
+    <div class="review-section margin-topBottom" id="testimonials">
+      <div class="text-center mb-5">
+        <h1 style="color: #480740; font-weight: 700; margin: 0px 30px">
+          EXPERIENCE THE DIFFERENCE THROUGH OUR STUDENTS JOURNEY
+        </h1>
+      </div>
+
+      <!-- ===================================================== -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 text-center">
+            <h3 class="fw-bold">EXCELLENT</h3>
+            <p class="text-warning h1">★★★★★</p>
+            <p>Based on <strong>632 reviews</strong></p>
+            <img src="images/google_logo.png" alt="google logo" width="150px" />
+          </div>
+          <div class="col-lg-9">
+            <div class="owl-carousel owl-theme" id="review-card">
+              <div class="review-card border position-relative p-3 bg-light">
+                <div class="review-card-icon position-absolute">
+                  <img src="./images/LOGO/google-icon.svg" alt="" />
+                </div>
+                <div class="review-card-header">
+                  <div class="d-flex align-items-center">
+                    <div class="review-profile me-3">
+                      <img src="./images/Review/01 (3).jpg" alt="" />
+                    </div>
+                    <div>
+                      <div class="review-name">
+                        <h4 class="mb-0">Dr. Ankita</h4>
+                      </div>
+                      <div class="review-date">
+                        <p class="mb-0">05-03-2025</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-rating d-flex align-items-center">
+                    <p class="text-warning h1 mb-0">★★★★★</p>
+                    <div class="blue-tik ms-2">
+                      <img src="./images/LOGO/verified-tick-mark.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="review-card-body">
+                  <p class="review-content">
+                    I’m Dr Ankita patel. I had opted for a cosmetology program
+                    and had a very nice experience of learning and very good
+                    Hands on that it practically learnt on patients. I genuinely
+                    feel this institute is making brighter Doctors to shine in
+                    this new world with lots of confidence. Dr Monica kapoor mam
+                    has such a nice nature and genuinely she takes every Doctor
+                    to learn everything without any lil confusion. Thank you so
+                    much mam and All the assistance over our learning journey.
+                    Thank you
+                  </p>
+                </div>
+                <div class="review-card-footer">
+                  <button class="read-more-btn">Read More</button>
+                  <button class="hide-btn" style="display: none">Hide</button>
+                </div>
+              </div>
+              <div class="review-card border position-relative p-3 bg-light">
+                <div class="review-card-icon position-absolute">
+                  <img src="./images/LOGO/google-icon.svg" alt="" />
+                </div>
+                <div class="review-card-header">
+                  <div class="d-flex align-items-center">
+                    <div class="review-profile me-3">
+                      <img src="./images/Review/02 (3).jpg" alt="" />
+                    </div>
+                    <div>
+                      <div class="review-name">
+                        <h4 class="mb-0">Dr. Shreya Pawaskar</h4>
+                      </div>
+                      <div class="review-date">
+                        <p class="mb-0">05-03-2025</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-rating d-flex align-items-center">
+                    <p class="text-warning h1 mb-0">★★★★★</p>
+                    <div class="blue-tik ms-2">
+                      <img src="./images/LOGO/verified-tick-mark.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="review-card-body">
+                  <p class="review-content">
+                    I was searching for a reputed cosmetology academy to pursue
+                    my fellowship, and I feel extremely fortunate to have found
+                    ILACAD Academy. Joining this academy has truly been one of
+                    the best decisions for my career. Dr. Monika Kapoor and Dr.
+                    Mansi are not only highly skilled professionals but also
+                    incredibly friendly mentors who make learning an enjoyable
+                    and enriching experience. Their in-depth knowledge, hands-on
+                    teaching approach, and willingness to clear every doubt make
+                    this academy stand out. I am really happy and satisfied with
+                    my decision to join ILACAD Academy, and I feel confident
+                    that the knowledge and training I am receiving here will
+                    immensely benefit my professional journey. Highly recommend
+                    this academy to anyone looking for quality training in
+                    cosmetology and aesthetics.
+                  </p>
+                </div>
+                <div class="review-card-footer">
+                  <button class="read-more-btn">Read More</button>
+                  <button class="hide-btn" style="display: none">Hide</button>
+                </div>
+              </div>
+              <div class="review-card border position-relative p-3 bg-light">
+                <div class="review-card-icon position-absolute">
+                  <img src="./images/LOGO/google-icon.svg" alt="" />
+                </div>
+                <div class="review-card-header">
+                  <div class="d-flex align-items-center">
+                    <div class="review-profile me-3">
+                      <img src="./images/Review/03 (3).jpg" alt="" />
+                    </div>
+                    <div>
+                      <div class="review-name">
+                        <h4 class="mb-0">Dr. Merlet</h4>
+                      </div>
+                      <div class="review-date">
+                        <p class="mb-0">05-03-2025</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-rating d-flex align-items-center">
+                    <p class="text-warning h1 mb-0">★★★★★</p>
+                    <div class="blue-tik ms-2">
+                      <img src="./images/LOGO/verified-tick-mark.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="review-card-body">
+                  <p class="review-content">
+                    I'm Dr. Merlet Mershisha SL. I am an MD Physician. I joined
+                    the FFAC program in ILACAD institute. Hands On training was
+                    really good and everyone got chances to do it. The
+                    techniques which Dr. Monica Kapoor had taught us were really
+                    simply very helpful. Because of their teaching, Hospitality
+                    I upgraded to IFFAC also. I Am very thankful and grateful to
+                    ILACAD
+                  </p>
+                </div>
+                <div class="review-card-footer">
+                  <button class="read-more-btn">Read More</button>
+                  <button class="hide-btn" style="display: none">Hide</button>
+                </div>
+              </div>
+              <div class="review-card border position-relative p-3 bg-light">
+                <div class="review-card-icon position-absolute">
+                  <img src="./images/LOGO/google-icon.svg" alt="" />
+                </div>
+                <div class="review-card-header">
+                  <div class="d-flex align-items-center">
+                    <div class="review-profile me-3">
+                      <img src="./images/Review/04 (3).jpg" alt="" />
+                    </div>
+                    <div>
+                      <div class="review-name">
+                        <h4 class="mb-0">Dr. Shivani</h4>
+                      </div>
+                      <div class="review-date">
+                        <p class="mb-0">05-03-2025</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-rating d-flex align-items-center">
+                    <p class="text-warning h1 mb-0">★★★★★</p>
+                    <div class="blue-tik ms-2">
+                      <img src="./images/LOGO/verified-tick-mark.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="review-card-body">
+                  <p class="review-content">
+                    I had a wonderful experience with ILACAD Institute.The
+                    course was incredibly insightful, and we gained a lot of
+                    practical knowledge through hands-on practice with patients.
+                    The lectures delivered by Dr. Monika ma’am and Dr. Mansi
+                    were highly informative, engaging, and easy to understand.
+                    Their expertise and teaching methods made complex concepts
+                    much easier to grasp. I truly appreciate the effort and
+                    dedication of the entire team. This course has been a
+                    significant step in enhancing my skills and confidence.
+                    Highly recommended
+                  </p>
+                </div>
+                <div class="review-card-footer">
+                  <button class="read-more-btn">Read More</button>
+                  <button class="hide-btn" style="display: none">Hide</button>
+                </div>
+              </div>
+              <div class="review-card border position-relative p-3 bg-light">
+                <div class="review-card-icon position-absolute">
+                  <img src="./images/LOGO/google-icon.svg" alt="" />
+                </div>
+                <div class="review-card-header">
+                  <div class="d-flex align-items-center">
+                    <div class="review-profile me-3">
+                      <img src="./images/Review/05 (3).jpg" alt="" />
+                    </div>
+                    <div>
+                      <div class="review-name">
+                        <h4 class="mb-0">Dr. Nikita</h4>
+                      </div>
+                      <div class="review-date">
+                        <p class="mb-0">05-03-2025</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-rating d-flex align-items-center">
+                    <p class="text-warning h1 mb-0">★★★★★</p>
+                    <div class="blue-tik ms-2">
+                      <img src="./images/LOGO/verified-tick-mark.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="review-card-body">
+                  <p class="review-content">
+                    The ILACAD INSTITUTE experience is really awesome. I started
+                    my course & everything is covered from the needed theory and
+                    technical basics to creative techniques. As a student you
+                    are encouraged to work practically to achieve real life
+                    experience . Dr Monica is so supportive, constructive , she
+                    not only allows us to perfect our abilities but encourages
+                    us to be our best. Thank you ILACAD
+                  </p>
+                </div>
+                <div class="review-card-footer">
+                  <button class="read-more-btn">Read More</button>
+                  <button class="hide-btn" style="display: none">Hide</button>
+                </div>
+              </div>
+              <div class="review-card border position-relative p-3 bg-light">
+                <div class="review-card-icon position-absolute">
+                  <img src="./images/LOGO/google-icon.svg" alt="" />
+                </div>
+                <div class="review-card-header">
+                  <div class="d-flex align-items-center">
+                    <div class="review-profile me-3">
+                      <img src="./images/Review/06 (5).jpg" alt="" />
+                    </div>
+                    <div>
+                      <div class="review-name">
+                        <h4 class="mb-0">Dr. Ishita</h4>
+                      </div>
+                      <div class="review-date">
+                        <p class="mb-0">05-03-2025</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-rating d-flex align-items-center">
+                    <p class="text-warning h1 mb-0">★★★★★</p>
+                    <div class="blue-tik ms-2">
+                      <img src="./images/LOGO/verified-tick-mark.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="review-card-body">
+                  <p class="review-content">
+                    I attended a Fellowship course at the ILACAD INSTITUTE and
+                    was extremely impressed with the experience. The faculties
+                    were knowledgeable and passionate, providing excellent
+                    hands-on training and theory lessons. The facilities were
+                    modern and well-equipped, creating a professional learning
+                    environment. I feel confident in my skills thanks to their
+                    personalized guidance and support. I highly recommend this
+                    ILACAD INSTITUTE for anyone seeking quality education in the
+                    cosmetology field.
+                  </p>
+                </div>
+                <div class="review-card-footer">
+                  <button class="read-more-btn">Read More</button>
+                  <button class="hide-btn" style="display: none">Hide</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer Section -->
+    <footer class="footer custom-style" id="contact">
+      <div class="container py-5">
+        <div class="row">
+          <!-- Left Side: Logo, Contact Info, Address -->
+          <div
+            class="col-lg-6 col-md-12 text-center text-lg-start mb-5 mb-lg-0"
+          >
+            <div class="footer-logo mb-4">
+              <img src="images/LOGO/ILACAD (WS).png" alt="ILACAD Logo" />
+            </div>
+            <span class="fs-3 fw-bold">CONTACT US</span>
+            <hr class="divider" style="margin-bottom: 8px" />
+            <p style="margin-bottom: 0px !important">
+              <i class="fa fa-phone"></i>
+              <a
+                href="tel:+918097711115"
+                class="text-decoration-none text-white fs-6"
+                >+91-80977 11115 / +91 81085 62115</a
+              >
+            </p>
+            <p class="mb-4">
+              <i class="fa fa-envelope"></i>
+              <a
+                href="mailto:ilacadhelpdesk@gmail.com"
+                class="text-decoration-none text-white fs-6"
+                >ilacadhelpdesk@gmail.com</a
+              >
+            </p>
+            <span class="fs-3 fw-bold">HEAD OFFICE</span>
+            <hr class="divider" style="margin-bottom: 8px" />
+            <p class="fs-6 mb-4">
+              308, 311 & 407, Morya Estate, Opposite Infiniti Mall,
+              Andheri(West), Mumbai, Maharashtra - 400053
+            </p>
+
+            <span class="fs-3 fw-bold">OTHER BRANCHES</span>
+            <hr class="divider" style="margin-bottom: 8px" />
+            <p class="fs-6">
+              Mumbai-Pune-Bangalore-Chennai-Kochi
+              Hyderabad-Delhi-Ahmedabad-Chandigarh
+              Bhopal-Lucknow-Jaipur-Kashmir-Kolkata
+            </p>
+          </div>
+
+          <!-- Right Side: Contact Form -->
+          <div class="col-lg-5 col-md-12 form-section mx-auto">
+            <h4 class="fw-bold text-center text-lg-start mb-3">Enquire Now</h4>
+            <form action="email.php" method="POST">
+              <div class="mb-2">
+                <label for="enquire-name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="enquire-name"
+                  required
+                  placeholder="Enter name"
+                />
+              </div>
+              <div class="mb-2">
+                <label for="enquire-phone" class="form-label"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-control"
+                  id="enquire-phone"
+                  required
+                  placeholder="Enter number"
+                />
+              </div>
+              <div class="mb-2">
+                <label for="enquire-email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="enquire-email"
+                  required
+                  placeholder="name@gmail.com"
+                />
+              </div>
+              <div class="mb-2">
+                <label for="enquire-city" class="form-label">City</label>
+                <input
+                  type="text"
+                  name="city"
+                  class="form-control"
+                  id="enquire-city"
+                  required
+                  placeholder="Enter City"
+                />
+              </div>
+              <div class="mb-2">
+                <label for="enquire-message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  name="message"
+                  id="enquire-message"
+                  rows="2"
+                  placeholder="Enter Message..."
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <style>
+      .whatsapp-floating-icon {
+        background-color: white;
+        padding: 0 12px;
+        font-size: 45px;
+        color: green;
+        border-radius: 50%;
+        z-index: 100;
+      }
+      .floating-icons {
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+      }
+      @media (max-width: 768px) {
+        .whatsapp-floating-icon {
+          background-color: white;
+          padding: 0 10px;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000;
+          font-size: 30px;
+          color: green;
+          border-radius: 50%;
+        }
+        .d-md-none input[type="text"],
+        .d-md-none input[type="email"],
+        .d-md-none input[type="tel"],
+        .d-md-none textarea {
+          background-color: transparent;
+        }
+        .d-md-none .form-control {
+          border-bottom: 1px solid #000;
+        }
+      }
+    </style>
+    <div class="floating-icon-container position-relative">
+      <div class="floating-icons position-fixed">
+        <div>
+          <a
+            href="https://wa.me/9076016020"
+            target="_blank"
+            class="whatsapp-floating-icon float-end mb-3"
+          >
+            <i class="fa fa-whatsapp"></i>
+          </a>
+        </div>
+        <div>
+          <button
+            class="btn btn-enrol md-btn outline-0 m-0"
+            style="box-shadow: none !important"
+            data-bs-toggle="modal"
+            data-bs-target="#courseEnquiryModalCenter"
+          >
+            ENROLL NOW
+          </button>
+        </div>
+      </div>
+    </div>
+    <style>
+      .custom-style {
+        background-image: url(images/Footer/footer_bg.jpg);
+        color: white;
+      }
+
+      .footer-logo img {
+        /* max-width: 150px; */
+        width: 200px;
+        margin-bottom: 30px;
+      }
+
+      .divider {
+        width: 220px;
+        height: 4px !important;
+        background: white;
+        border: none;
+        margin-top: 0px;
+      }
+
+      .form-section {
+        background-color: white;
+        color: #480740;
+        padding: 15px;
+        border-radius: 10px;
+        max-width: 450px;
+      }
+
+      .form-control {
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        box-shadow: none !important;
+        font-size: 14px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: #480740;
+        border: none;
+        color: white;
+        box-shadow: none;
+        border: 2px solid #480740;
+      }
+
+      .submit-btn:hover {
+        border: 2px solid #480740;
+        background-color: white;
+        color: #480740;
+        box-shadow: none;
+        /* font-weight: 700; */
+      }
+
+      .btn-hover:hover {
+        border: 2px solid #480740;
+        background-color: white;
+        color: #480740;
+      }
+
+      @media (max-width: 768px) {
+        .divider {
+          width: 100%;
+        }
+
+        .form-section {
+          max-width: 100%;
+        }
+      }
+    </style>
+
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#hero-carousel").owlCarousel({
+          items: 1,
+          loop: true,
+          nav: false,
+          dots: false,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          smartSpeed: 3000,
+          animateOut: "animate__slideOutDown",
+          animateIn: "animate__slideInDown",
+        });
+        $("#review-card").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            700: {
+              items: 2,
+            },
+            1440: {
+              items: 3,
+            },
+          },
+        });
+        $("#about-us-carousel").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+          },
+        });
+
+        $("#upcoming-batches-carousel").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+          },
+        });
+
+        // code for Highlights strat
+        $(".counter").each(function () {
+          var $this = $(this);
+          var countTo = $this.attr("data-count");
+          if (countTo == "10000") {
+            countTo = 10;
+            $({ countNum: $this.text() }).animate(
+              { countNum: countTo },
+              {
+                duration: 2000,
+                easing: "swing",
+                step: function () {
+                  $this.text(Math.ceil(this.countNum) + "k+");
+                },
+              }
+            );
+          } else if (countTo == "100") {
+            $({ countNum: $this.text() }).animate(
+              { countNum: countTo },
+              {
+                duration: 2000,
+                easing: "swing",
+                step: function () {
+                  $this.text(Math.ceil(this.countNum) + "%");
+                },
+              }
+            );
+          } else {
+            $({ countNum: $this.text() }).animate(
+              { countNum: countTo },
+              {
+                duration: 2000,
+                easing: "swing",
+                step: function () {
+                  $this.text(Math.ceil(this.countNum) + "+");
+                },
+              }
+            );
+          }
+          // $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+          //   duration: 2000,
+          //   easing: 'swing',
+          //   step: function () {
+          //     $this.text(Math.ceil(this.countNum) + "+");
+          //   }
+          // });
+        });
+        // code for Highlights end
+
+        // hidden-city-toggle code
+        $("#hidden-city-toggle").click(function () {
+          $(".hidden-city").show(); // This will show the container
+          $("#hidden-city-toggle").hide(); // This will show the container
+        });
+
+        // When the user clicks the "Read More" button
+        $(".read-more-btn").click(function () {
+          var content = $(this).closest(".review-card").find(".review-content");
+          var readMoreBtn = $(this);
+          var hideBtn = $(this).siblings(".hide-btn");
+
+          // Reveal full content
+          content.css("height", "auto");
+          content.css("-webkit-line-clamp", "none");
+
+          // Hide "Read More" button and show "Hide" button
+          readMoreBtn.hide();
+          hideBtn.show();
+        });
+        // When the user clicks the "Hide" button
+        $(".hide-btn").click(function () {
+          var content = $(this).closest(".review-card").find(".review-content");
+          var hideBtn = $(this);
+          var readMoreBtn = $(this).siblings(".read-more-btn");
+
+          // Collapse content to 4 lines
+          content.css("height", "95px");
+
+          // Show "Read More" button and hide "Hide" button
+          hideBtn.hide();
+          readMoreBtn.show();
+        });
+
+        $("#upcoming-batches-carouse2").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+          },
+        });
+
+        $("#upcoming-batches-carouse3").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+          },
+        });
+
+        $("#upcoming-batches-carouse4").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+          },
+        });
+
+        $("#upcoming-batches-carouse5").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 1,
+            },
+          },
+        });
+
+        $("#review-batches-carousel").owlCarousel({
+          autoplay: true,
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: { items: 1 }, // Mobile: Show 1 item
+            600: { items: 2 }, // Tablets: Show 2 items
+            1000: { items: 3 }, // Desktop: Show 3 items
+          },
+        });
+      });
+    </script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>
