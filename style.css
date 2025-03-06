@@ -108,7 +108,7 @@ body {
 }
 
 .navbar {
-  background-color: #480740;
+  background-color: #81007f;
   padding: 0.9375rem 1.875rem;
   margin: 0 auto;
   z-index: 1000;
@@ -152,7 +152,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #480740;
+    background-color: #81007f;
     /* Ensure background stays black */
     z-index: 1000;
     box-shadow: 0rem 0.25rem 0.625rem #480740;
@@ -921,4 +921,18 @@ img.manual_height {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.upcoming-card .position-relative {
+  overflow: hidden;
+}
+
+.upcoming-card .position-relative img.img-fluid.w-100 {
+  transition: all 0.3s ease-in;
+  transform: scale(1);
+}
+
+.upcoming-card:hover .position-relative img.img-fluid.w-100 {
+  transition: all 0.3s ease-in;
+  transform: scale(1.1);
 }
