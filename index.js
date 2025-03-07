@@ -104,3 +104,15 @@ function horizontalLoop(items, config) {
     return tl;
 }
 // Statistic Counter Section End
+
+
+// Set a timeout to open the modal after 25 seconds, if it's not already open
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      var modalElement = document.getElementById('courseEnquiryModalCenter');
+      if (!modalElement.classList.contains('show')) {
+        var myModal = new bootstrap.Modal(modalElement);
+        myModal.show();
+      }
+    }, 25000); 
+  });
